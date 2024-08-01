@@ -1059,17 +1059,16 @@ font-display: swap;
 
 
 
-<script>
-    function transMenu() {
-        var menu = document.getElementById("container-MENU_AS_CONTAINER");
-        if (menu.style.display === "none") {
-            menu.style.display = "block";
-        } else {
-            menu.style.display = "none";
-        }
-    };
-    document.getElementByClassName('P4my70').addEventListener('click', transMenu);
-</script>
+        <script>
+            window.onload = function() {
+                var width = window.innerWidth;
+                if (width <= 600) {
+                    window.location.href = "./Home_mobile";
+                } else {
+                    window.location.href = "./Home";
+                }
+            };                
+        </script>
 
 
 
