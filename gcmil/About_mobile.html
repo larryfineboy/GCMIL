@@ -1225,7 +1225,16 @@ font-display: swap;
 
 
 
-
+<script>
+            window.onload = function() {
+                var width = window.innerWidth;
+                if (width <= 600) {
+                    window.location.href = "./About_mobile";
+                } else {
+                    window.location.href = "./About";
+                }
+            };                
+        </script>
 
 
 
