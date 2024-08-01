@@ -1237,13 +1237,22 @@
         
         <script>
             window.onload = function() {
-                var width = window.innerWidth;
-                if (width <= 600) {
-                    window.location.href = "./About_mobile";
-                } else {
-                    window.location.href = "./About";
+                var initialWidth = window.innerWidth;
+        
+                function updateLocation() {
+                    var currentWidth = window.innerWidth;
+                    if (currentWidth !== initialWidth) {
+                        if (currentWidth <= 600) {
+                            window.location.href = "./About_mobile";
+                        } else {
+                            window.location.href = "./About";
+                        }
+                    }
                 }
-            };                
+        
+                // Listen for window resize
+                window.addEventListener('resize', updateLocation);
+            };
         </script>
     </body>
 </html>
