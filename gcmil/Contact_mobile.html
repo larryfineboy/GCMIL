@@ -1237,7 +1237,16 @@ font-display: swap;
 
 
 
-
+<script>
+            window.onload = function() {
+                var width = window.innerWidth;
+                if (width <= 600) {
+                    window.location.href = "./Contact_mobile";
+                } else {
+                    window.location.href = "./Contact";
+                }
+            };                
+        </script>
 
 
 
