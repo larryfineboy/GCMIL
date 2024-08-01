@@ -1069,25 +1069,14 @@
 <style>#renderingText{display:flex;flex-direction: column;align-items: center;justify-items: center;position:relative;margin-top: 50px;font-size:18px;padding-left:20%;}.redditonTxt{color:red;font-size:12px;}</style>
 
 <script>
-        // JavaScript to toggle views
-        const laptopView = document.getElementById('laptopView');
-        const mobileView = document.getElementById('mobileView');
-    
-        function updateViews() {
-            if (window.innerWidth <= 600) {
-                laptopView.style.display = 'none';
-                mobileView.style.display = 'flex';
-            } else {
-                laptopView.style.display = 'block';
-                mobileView.style.display = 'none';
-            }
-        }
-    
-        // Initial check and update
-        updateViews();
-    
-        // Listen for window resize
-        window.addEventListener('resize', updateViews);
+            window.onload = function() {
+                var width = window.innerWidth;
+                if (width <= 600) {
+                    window.location.href = "./Home_mobile";
+                } else {
+                    window.location.href = "./Home";
+                }
+            };                
     </script>
     
     </body>
