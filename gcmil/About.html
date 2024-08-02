@@ -1230,28 +1230,20 @@
             <div id="my-extension-root" class="my-extension-root" style="width: 1020px; height: 1px; position: fixed; top: 0px; left: 24px; z-index: 2147483641; display: none;"></div></body></html>
         </div>
         
-        <div id="mobileView">
-            <a href="./About_mobile" id="renderingText"><span class="redditonTxt">Site can't be rendered</span> <br> Click here to view on Mobile</a>
-        </div>
-        <style>#renderingText{display:flex;flex-direction: column;align-items: center;justify-items: center;position:relative;margin-top: 50px;font-size:18px;padding-left:20%;}.redditonTxt{color:red;font-size:12px;}</style>
         
         <script>
-            window.onload = function() {
-                var initialWidth = window.innerWidth;
-        
-                function updateLocation() {
-                    var currentWidth = window.innerWidth;
-                    if (currentWidth !== initialWidth) {
-                        if (currentWidth <= 600) {
-                            window.location.href = "./About_mobile";
-                        } else {
-                            window.location.href = "./About";
-                        }
-                    }
+            function updateLocation() {
+                var width = window.innerWidth;
+                if (width <= 600) {
+                    window.location.href = "./Projects_mobile";
+                } else {
+                    window.location.href = "./Projects";
                 }
-        
-                // Listen for window resize
-                window.addEventListener('resize', updateLocation);
+            }
+    
+            // Initial check and update
+            window.onload = function() {
+                updateLocation();
             };
         </script>
     </body>
