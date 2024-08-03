@@ -1070,7 +1070,7 @@
                 //if (redirected) return;
 
                 var width = window.screen.width;
-                console.log(width, window.screen.width);
+                console.log(window.location.pathname);
                 if (width <= 600) {
                     if (window.location.pathname == "/Home.html") {
                         window.location.href = "./Home_mobile.html";
@@ -1083,6 +1083,7 @@
                     if (window.location.pathname == "/Home_mobile.html") {
                         window.location.href = "./Home.html";
                     } else if (window.location.pathname == "/Home_mobile") {
+                        
                         window.location.href = "./Home";
                     }
                     // redirected = true;
