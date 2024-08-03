@@ -1060,14 +1060,39 @@ font-display: swap;
 
 
         <script>
-            window.onload = function() {
-                var width = window.innerWidth;
+            // let redirected = false;
+
+            function updateLocation() {
+                //if (redirected) return;
+
+                var width = window.screen.width;
+                console.log(width, window.screen.width);
                 if (width <= 600) {
-                    window.location.href = "./Home_mobile";
-                } else {
-                    window.location.href = "./Home";
+                    if (window.location.pathname == "/Home.html") {
+                        window.location.href = "./Home_mobile.html";
+                    } else if (window.location.pathname == "/Home") {
+                        window.location.href = "./Home_mobile";
+                    }
+                    // redirected = true;
+                    // window.location.href = "./Home_mobile.html";
+                } else if (width > 600) {
+                    if (window.location.pathname == "/Home_mobile.html") {
+                        window.location.href = "./Home.html";
+                    } else if (window.location.pathname == "/Home_mobile") {
+                        window.location.href = "./Home";
+                    }
+                    // redirected = true;
+                    // window.location.href = "./Home.html";
                 }
-            };                
+            }
+
+            // Initial check and update
+            // window.onload = function() {
+                // updateLocation();
+            // };
+
+            // Listen for window resize
+            window.addEventListener('load', updateLocation, false);
         </script>
 
 
