@@ -1063,21 +1063,41 @@
     
 </div>
 
-<div id="mobileView">
-    <a href="./Home_mobile" id="renderingText"><span class="redditonTxt">Site can't be rendered</span> <br> Click here to view on Mobile</a>
-</div>
-<style>#renderingText{display:flex;flex-direction: column;align-items: center;justify-items: center;position:relative;margin-top: 50px;font-size:18px;padding-left:20%;}.redditonTxt{color:red;font-size:12px;}</style>
-
 <script>
-            window.onload = function() {
-                var width = window.innerWidth;
+            // let redirected = false;
+
+            function updateLocation() {
+                //if (redirected) return;
+
+                var width = window.screen.width;
+                console.log(width, window.screen.width);
                 if (width <= 600) {
-                    window.location.href = "./Home_mobile";
-                } else {
-                    window.location.href = "./Home";
+                    if (window.location.pathname == "/Home.html") {
+                        window.location.href = "./Home_mobile.html";
+                    } else if (window.location.pathname == "/Home") {
+                        window.location.href = "./Home_mobile";
+                    }
+                    // redirected = true;
+                    // window.location.href = "./Home_mobile.html";
+                } else if (width > 600) {
+                    if (window.location.pathname == "/Home_mobile.html") {
+                        window.location.href = "./Home.html";
+                    } else if (window.location.pathname == "/Home_mobile") {
+                        window.location.href = "./Home";
+                    }
+                    // redirected = true;
+                    // window.location.href = "./Home.html";
                 }
-            };                
-    </script>
+            }
+
+            // Initial check and update
+            // window.onload = function() {
+                // updateLocation();
+            // };
+
+            // Listen for window resize
+            window.addEventListener('load', updateLocation, false);
+        </script>
     
     </body>
 </html>
